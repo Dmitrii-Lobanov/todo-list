@@ -4,10 +4,11 @@ import TodoItem from './TodoItem';
 
 const TodoList = () => {
   return (
-    <div>
-      <h1>Hello</h1>
+    <ul className="list-group my-5">
+      <h3 className="text-capitalize text-center">Todo list</h3>
       <TodoItem />
-    </div>
+      <button type="button" className="btn btn-danger btn-block text-capitalize mt-5">Clear list</button>
+    </ul>
   );
 }
 
