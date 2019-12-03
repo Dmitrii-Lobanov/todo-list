@@ -1,5 +1,7 @@
 ![Screenshot](https://raw.github.com/Dmitrii-Lobanov/todo-list/master/public/screenshot.png)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/41d05790-3003-4f73-b622-2ecd43cda641/deploy-status)](https://app.netlify.com/sites/kind-perlman-fe71ba/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
