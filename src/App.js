@@ -17,20 +17,24 @@ const App = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     const newItem = {
       id: id,
-      item: item
+      title: item
     }
-
-    //console.log(newItem);
-
     setItems([...items, newItem]);
     setItem('');
     setId(uuid());
     setEditItem(false);
   }
 
+  const clearList = () => {
+    setItems([]);
+  }
+
+  const handleDelete = id => {
+    const filteredItems = items.filter(item => item.id != id);
+    setItems(filteredItems);
+  }
 
   return (
     <div className="container">
@@ -42,7 +46,11 @@ const App = () => {
             handleChange={handleChange}
             handleSubmit={handleSubmit}
           />
-          <TodoList items={items} />
+          <TodoList
+            items={items}
+            clearList={clearList}
+            handleDelete={handleDelete}
+          />
         </div>
       </div>
     </div>

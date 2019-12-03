@@ -1,8 +1,6 @@
 import React from 'react';
 
-const TodoInput = (props) => {
-  const { item, handleChange, handleSubmit } = props;
-
+const TodoInput = ({ item, handleChange, handleSubmit }) => {
   return (
     <div className="card card-body my-3">
       <form onSubmit={handleSubmit}>
