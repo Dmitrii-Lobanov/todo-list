@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import uuid from 'uuid';
 
@@ -32,8 +32,17 @@ const App = () => {
   }
 
   const handleDelete = id => {
-    const filteredItems = items.filter(item => item.id != id);
+    const filteredItems = items.filter(item => item.id !== id);
     setItems(filteredItems);
+  }
+
+  const handleEdit = id => {
+    const filteredItems = items.filter(item => item.id !== id);
+    const selectedItem = items.find(item => item.id === id);
+    setItems(filteredItems);
+    setItem(selectedItem.title);
+    setEditItem(true);
+    setId(id);
   }
 
   return (
@@ -45,11 +54,13 @@ const App = () => {
             item={item}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
+            editItem={editItem}
           />
           <TodoList
             items={items}
             clearList={clearList}
             handleDelete={handleDelete}
+            handleEdit={handleEdit}
           />
         </div>
       </div>

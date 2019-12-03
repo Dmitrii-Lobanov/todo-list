@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TodoInput = ({ item, handleChange, handleSubmit }) => {
+const TodoInput = ({ item, handleChange, handleSubmit, editItem }) => {
   return (
     <div className="card card-body my-3">
       <form onSubmit={handleSubmit}>
@@ -18,7 +18,14 @@ const TodoInput = ({ item, handleChange, handleSubmit }) => {
             onChange={handleChange}
           ></input>
         </div>
-        <button type="submit" className="btn btn-block btn-primary mt-3">Add item</button>
+        <button
+          type="submit"
+          className={
+            editItem ? "btn btn-block btn-success mt-3" : "btn btn-block btn-primary mt-3"
+          }
+        >
+          {editItem ? 'Edit item' : 'Add item'}
+        </button>
       </form>
     </div>
   );
